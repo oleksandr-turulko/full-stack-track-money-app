@@ -1,0 +1,6 @@
+@TrackMoney.WebApi_HostAddress = http://localhost:5042
+
+GET {{TrackMoney.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

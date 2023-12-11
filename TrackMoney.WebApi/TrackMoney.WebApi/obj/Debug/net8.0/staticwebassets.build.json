@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "UzgiX9YBQYumEzAWqk0dTK8498Y+W8cPn2c89iAAzj0=",
+  "Source": "TrackMoney.WebApi",
+  "BasePath": "_content/TrackMoney.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
