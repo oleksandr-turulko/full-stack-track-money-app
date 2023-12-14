@@ -1,0 +1,12 @@
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\bin\Debug\net8.0\TrackMoney.BLL.deps.json
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\bin\Debug\net8.0\TrackMoney.BLL.dll
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\bin\Debug\net8.0\TrackMoney.BLL.pdb
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\obj\Debug\net8.0\TrackMoney.BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\obj\Debug\net8.0\TrackMoney.BLL.AssemblyInfoInputs.cache
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\obj\Debug\net8.0\TrackMoney.BLL.AssemblyInfo.cs
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\obj\Debug\net8.0\TrackMoney.BLL.csproj.CoreCompileInputs.cache
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\obj\Debug\net8.0\TrackMoney.BLL.sourcelink.json
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\obj\Debug\net8.0\TrackMoney.BLL.dll
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\obj\Debug\net8.0\refint\TrackMoney.BLL.dll
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\obj\Debug\net8.0\TrackMoney.BLL.pdb
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.BLL\obj\Debug\net8.0\ref\TrackMoney.BLL.dll

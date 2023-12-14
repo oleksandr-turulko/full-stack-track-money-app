@@ -1,6 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using TrackMoney.Data.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<TrackMoneyDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("mssql"))
+);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

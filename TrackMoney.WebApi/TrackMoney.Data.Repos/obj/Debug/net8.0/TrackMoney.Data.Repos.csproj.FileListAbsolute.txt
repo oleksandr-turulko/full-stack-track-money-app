@@ -1,0 +1,12 @@
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\bin\Debug\net8.0\TrackMoney.Data.Repos.deps.json
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\bin\Debug\net8.0\TrackMoney.Data.Repos.dll
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\bin\Debug\net8.0\TrackMoney.Data.Repos.pdb
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\obj\Debug\net8.0\TrackMoney.Data.Repos.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\obj\Debug\net8.0\TrackMoney.Data.Repos.AssemblyInfoInputs.cache
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\obj\Debug\net8.0\TrackMoney.Data.Repos.AssemblyInfo.cs
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\obj\Debug\net8.0\TrackMoney.Data.Repos.csproj.CoreCompileInputs.cache
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\obj\Debug\net8.0\TrackMoney.Data.Repos.sourcelink.json
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\obj\Debug\net8.0\TrackMoney.Data.Repos.dll
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\obj\Debug\net8.0\refint\TrackMoney.Data.Repos.dll
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\obj\Debug\net8.0\TrackMoney.Data.Repos.pdb
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\obj\Debug\net8.0\ref\TrackMoney.Data.Repos.dll
