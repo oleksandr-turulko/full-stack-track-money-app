@@ -32,12 +32,12 @@ namespace TrackMoney.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("ValueInUAH")
+                    b.Property<decimal>("PriceInUAH")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Currencies");
+                    b.ToTable("Currencies", (string)null);
                 });
 
             modelBuilder.Entity("TrackMoney.Data.Models.Entities.Transaction", b =>
@@ -48,9 +48,6 @@ namespace TrackMoney.Data.Migrations
 
                     b.Property<Guid>("CurrencyId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -71,7 +68,7 @@ namespace TrackMoney.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Transactions");
+                    b.ToTable("Transactions", (string)null);
                 });
 
             modelBuilder.Entity("TrackMoney.Data.Models.Entities.User", b =>
@@ -108,7 +105,7 @@ namespace TrackMoney.Data.Migrations
 
                     b.HasIndex("MainCurrencyId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("TrackMoney.Data.Models.Entities.Transaction", b =>

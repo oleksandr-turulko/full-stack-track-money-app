@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -66,10 +65,7 @@ namespace TrackMoney.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Users_MainCurrencyId",
-                table: "Users",
-                column: "MainCurrencyId");
+
 
             migrationBuilder.CreateIndex(
                 name: "IX_Transactions_CurrencyId",
@@ -81,13 +77,6 @@ namespace TrackMoney.Data.Migrations
                 table: "Transactions",
                 column: "UserId");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Users_Currencies_MainCurrencyId",
-                table: "Users",
-                column: "MainCurrencyId",
-                principalTable: "Currencies",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
         }
 
         /// <inheritdoc />
