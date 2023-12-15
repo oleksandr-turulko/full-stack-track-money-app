@@ -4,8 +4,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using TrackMoney.BLL.TransactionBl;
 using TrackMoney.BLL.UserBl;
 using TrackMoney.Data.Context;
+using TrackMoney.Data.Repos.Repos.Transactions;
 using TrackMoney.Data.Repos.Repos.Users;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,6 +45,8 @@ builder.Services.AddAuthentication(o =>
 builder.Services.AddAuthorization();
 builder.Services.AddScoped<IUserBl, UserBl>();
 builder.Services.AddScoped<IUserRepo, SqlUserRepo>();
+builder.Services.AddScoped<ITransactionBl, TransactionBl>();
+builder.Services.AddScoped<ITransactionRepo, SqlTransactionRepo>();
 
 builder.Services.AddSingleton<IPasswordHasher, PasswordHasher>();
 builder.Services.AddControllers();

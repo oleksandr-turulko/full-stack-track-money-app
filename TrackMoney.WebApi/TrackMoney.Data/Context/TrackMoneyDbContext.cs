@@ -10,5 +10,8 @@ namespace TrackMoney.Data.Context
         { }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
+
     }
 }

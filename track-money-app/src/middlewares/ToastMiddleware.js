@@ -1,29 +1,29 @@
-import { newExpense, editExpense, deleteExpense, 
-    setExpensesError, newExpenseError, editExpenseError, deleteExpenseError } from '../app/expensesSlice';
+import { newTransaction, editTransaction, deleteTransaction, 
+    setTransactionsError, newTransactionError, editTransactionError, deleteTransactionError } from '../app/transactionSlice';
 import { toast } from 'react-toastify';
 
 const ToastMiddleware = () => next => action => {
     switch(action.type) {
-        case newExpense.type:
-            toast.success('New expense added successfully');
+        case newTransaction.type:
+            toast.success('New transaction added successfully');
             break;
-        case editExpense.type:
-            toast.success('Expense edited successfully');
+        case editTransaction.type:
+            toast.success('Transaction edited successfully');
             break;
-        case deleteExpense.type:
-            toast.success('Expense deleted successfully');
+        case deleteTransaction.type:
+            toast.success('Transaction deleted successfully');
             break;
-        case setExpensesError.type:
-            toast.error('Error loading expenses');
+        case setTransactionsError.type:
+            toast.error('Error loading transactions');
             break;
-        case newExpenseError.type:
-            toast.error('Error adding new expense');
+        case newTransactionError.type:
+            toast.error('Error adding new transaction');
             break;
-        case editExpenseError.type:
-            toast.error('Error editing expense');
+        case editTransactionError.type:
+            toast.error('Error editing transaction');
             break;
-        case deleteExpenseError.type:
-            toast.error('Error deleting expense');
+        case deleteTransactionError.type:
+            toast.error('Error deleting transaction');
             break;
         default:
             break;

@@ -11,5 +11,12 @@ namespace TrackMoney.Data.Models.Entities
         public string? ExternalAppId { get; set; }
         public string? ExternalAppType { get; set; }
 
+        public decimal Ballance { get; set; } = .0m;
+
+        public Guid MainCurrencyId { get; set; }
+        public Currency MainCurrency { get; set; }
+
+        public ICollection<Transaction> Transactions { get; set; }
+
     }
 }
