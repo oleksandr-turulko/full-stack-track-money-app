@@ -1478,9 +1478,22 @@
           }
         }
       },
+      "TrackMoney.BLL.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/TrackMoney.BLL.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrackMoney.BLL.Models.dll": {}
+        }
+      },
       "TrackMoney.Data.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "TrackMoney.BLL.Models": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/TrackMoney.Data.Models.dll": {}
         },
@@ -4016,6 +4029,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "TrackMoney.BLL.Models/1.0.0": {
+      "type": "project",
+      "path": "../TrackMoney.BLL.Models/TrackMoney.BLL.Models.csproj",
+      "msbuildProject": "../TrackMoney.BLL.Models/TrackMoney.BLL.Models.csproj"
     },
     "TrackMoney.Data.Models/1.0.0": {
       "type": "project",

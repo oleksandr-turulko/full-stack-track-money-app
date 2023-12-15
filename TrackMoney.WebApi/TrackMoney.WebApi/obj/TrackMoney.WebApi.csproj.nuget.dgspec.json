@@ -147,7 +147,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.BLL.Models\\TrackMoney.BLL.Models.csproj": {
+                "projectPath": "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.BLL.Models\\TrackMoney.BLL.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -208,6 +212,9 @@
               },
               "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.Data\\TrackMoney.Data.csproj": {
                 "projectPath": "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.Data\\TrackMoney.Data.csproj"
+              },
+              "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.Services\\TrackMoney.Services.csproj": {
+                "projectPath": "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.Services\\TrackMoney.Services.csproj"
               }
             }
           }
@@ -379,6 +386,10 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[7.0.3, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

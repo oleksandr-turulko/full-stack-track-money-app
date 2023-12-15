@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cO4E59gxlxb5CEtQaVWB7U9kOvMppHVw+v0dwEmrU6i+/PnYfabrwjwjcL4WyW5hG7ewF2xzoGJfaFk9Vf2LmQ==",
+  "dgSpecHash": "kg+vM6R6+uRqeX0NPo3UTaVEJaIt90e0MC4nwhzeg3mfVqqe/qmRGBOEcmYdWMPi+ru7BYHxBjAtJU+hWjxPQg==",
   "success": true,
   "projectFilePath": "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.WebApi\\TrackMoney.WebApi.csproj",
   "expectedPackageFiles": [
@@ -73,6 +73,7 @@
     "C:\\Users\\Oleks\\.nuget\\packages\\system.management\\7.0.2\\system.management.7.0.2.nupkg.sha512",
     "C:\\Users\\Oleks\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\Oleks\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
+    "C:\\Users\\Oleks\\.nuget\\packages\\system.net.http.json\\8.0.0\\system.net.http.json.8.0.0.nupkg.sha512",
     "C:\\Users\\Oleks\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Oleks\\.nuget\\packages\\system.reflection.metadata\\6.0.1\\system.reflection.metadata.6.0.1.nupkg.sha512",
     "C:\\Users\\Oleks\\.nuget\\packages\\system.runtime.caching\\6.0.0\\system.runtime.caching.6.0.0.nupkg.sha512",

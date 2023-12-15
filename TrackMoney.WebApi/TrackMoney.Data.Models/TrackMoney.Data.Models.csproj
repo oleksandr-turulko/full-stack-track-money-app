@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TrackMoney.BLL.Models\TrackMoney.BLL.Models.csproj" />
+  </ItemGroup>
+
 </Project>

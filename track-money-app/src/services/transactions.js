@@ -2,10 +2,10 @@ import {
     setTransactions, newTransaction, editTransaction, deleteTransaction,
     setTransactionsError, editTransactionError, newTransactionError, deleteTransactionError
 } from '../app/transactionSlice';
-import * as axios from 'axios';
+import axios from 'axios';
 
 const axiosInstance = axios.create({    
-    baseURL: `${process.env.REACT_APP_BASE_URL}/transactions`,
+    baseURL: `${process.env.REACT_APP_BASE_URL}/Transactions`,
 })
 
 axiosInstance.interceptors.request.use((config) => {

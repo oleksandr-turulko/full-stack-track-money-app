@@ -914,7 +914,15 @@
           }
         }
       },
+      "TrackMoney.BLL.Models/1.0.0": {
+        "runtime": {
+          "TrackMoney.BLL.Models.dll": {}
+        }
+      },
       "TrackMoney.Data.Models/1.0.0": {
+        "dependencies": {
+          "TrackMoney.BLL.Models": "1.0.0"
+        },
         "runtime": {
           "TrackMoney.Data.Models.dll": {}
         }
@@ -1451,6 +1459,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "TrackMoney.BLL.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "TrackMoney.Data.Models/1.0.0": {
       "type": "project",

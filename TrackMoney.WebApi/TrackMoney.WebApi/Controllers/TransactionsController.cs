@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TrackMoney.BLL.Models.Messages;
+using TrackMoney.BLL.Models.Messages.Requests.Transactions;
 using TrackMoney.BLL.TransactionBl;
 
 namespace TrackMoney.WebApi.Controllers
@@ -24,6 +26,19 @@ namespace TrackMoney.WebApi.Controllers
 
             var response = await _transactionsBl.GetUsersTransactions(jwt, pageNumber, pageSize);
             return Ok();
+        }
+        [HttpPost]
+        public async Task<ActionResult> AddUsersTransaction([FromBody] AddTransactionRequest request)
+        {
+            var jwt = HttpContext.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
+
+            var response = await _transactionsBl.AddUsersTransaction(jwt, request);
+            if (response is BadResponse)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
         }
     }
 }

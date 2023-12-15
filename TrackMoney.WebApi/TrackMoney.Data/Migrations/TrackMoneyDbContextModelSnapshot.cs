@@ -32,7 +32,7 @@ namespace TrackMoney.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("PriceInUAH")
+                    b.Property<decimal>("ValueInUAH")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -48,6 +48,9 @@ namespace TrackMoney.Data.Migrations
 
                     b.Property<Guid>("CurrencyId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()

@@ -6,7 +6,7 @@ import TransactionForm from './TransactionForm';
 
 const TransactionList = () => {
     const dispatch = useDispatch();
-    const transactions = useSelector(state => state.transactionsSlice.transactions);
+    const transactions = useSelector(state => state.transactionSlice.transactions);
 
     useEffect(() => {
         GetTransactions(dispatch);
@@ -14,7 +14,7 @@ const TransactionList = () => {
 
     return transactions.map(e =>
         <div key={e.id} style={{ marginBottom: '1rem' }}>
-            <ListRow transaction={e} />
+            <ListRow transaction={e} /> 
         </div>
     );
 }

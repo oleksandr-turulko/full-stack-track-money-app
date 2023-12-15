@@ -18,3 +18,5 @@ D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Rep
 D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\bin\Debug\net8.0\TrackMoney.Data.pdb
 D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\bin\Debug\net8.0\TrackMoney.Data.Models.pdb
 D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\obj\Debug\net8.0\TrackMoney.Data.Repos.csproj.CopyComplete
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\bin\Debug\net8.0\TrackMoney.Services.dll
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Data.Repos\bin\Debug\net8.0\TrackMoney.Services.pdb

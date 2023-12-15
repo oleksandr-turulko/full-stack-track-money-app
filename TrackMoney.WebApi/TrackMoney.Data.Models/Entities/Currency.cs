@@ -4,6 +4,6 @@
     {
         public Guid Id { get; set; }
         public string Code { get; set; }
-        public decimal PriceInUAH { get; set; }
+        public decimal ValueInUAH { get; set; }
     }
 }

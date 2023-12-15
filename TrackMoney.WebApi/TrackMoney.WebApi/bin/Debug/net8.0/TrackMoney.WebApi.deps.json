@@ -881,6 +881,11 @@
           }
         }
       },
+      "System.Net.Http.Json/8.0.0": {
+        "dependencies": {
+          "System.Text.Json": "8.0.0"
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {},
       "System.Reflection.Metadata/6.0.1": {
         "dependencies": {
@@ -1000,6 +1005,9 @@
         }
       },
       "TrackMoney.Data.Models/1.0.0": {
+        "dependencies": {
+          "TrackMoney.BLL.Models": "1.0.0"
+        },
         "runtime": {
           "TrackMoney.Data.Models.dll": {}
         }
@@ -1008,7 +1016,8 @@
         "dependencies": {
           "Microsoft.AspNet.Identity.Core": "2.2.4",
           "TrackMoney.BLL.Models": "1.0.0",
-          "TrackMoney.Data": "1.0.0"
+          "TrackMoney.Data": "1.0.0",
+          "TrackMoney.Services": "1.0.0"
         },
         "runtime": {
           "TrackMoney.Data.Repos.dll": {}
@@ -1019,6 +1028,7 @@
           "AutoMapper": "12.0.1",
           "Microsoft.IdentityModel.Tokens": "7.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.0.3",
+          "System.Net.Http.Json": "8.0.0",
           "TrackMoney.BLL.Models": "1.0.0"
         },
         "runtime": {
@@ -1515,6 +1525,13 @@
       "sha512": "sha512-JGkzeqgBsiZwKJZ1IxPNsDFZDhUvuEdX8L8BDC8N3KOj+6zMcNU28CNN59TpZE/VJYy9cP+5M+sbxtWJx3/xtw==",
       "path": "system.memory.data/1.0.2",
       "hashPath": "system.memory.data.1.0.2.nupkg.sha512"
+    },
+    "System.Net.Http.Json/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-48Bxrd6zcGeQzS4GMEDVjuqCcAw/9wcEWnIu48FQJ5IzfKPiMR1nGtz9LrvGzU4+3TLbx/9FDlGmCUeLin1Eqg==",
+      "path": "system.net.http.json/8.0.0",
+      "hashPath": "system.net.http.json.8.0.0.nupkg.sha512"
     },
     "System.Numerics.Vectors/4.5.0": {
       "type": "package",
