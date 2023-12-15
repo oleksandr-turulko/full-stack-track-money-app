@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TrackMoney.BLL.Models\TrackMoney.BLL.Models.csproj" />
+    <ProjectReference Include="..\TrackMoney.Data\TrackMoney.Data.csproj" />
+  </ItemGroup>
+
 </Project>

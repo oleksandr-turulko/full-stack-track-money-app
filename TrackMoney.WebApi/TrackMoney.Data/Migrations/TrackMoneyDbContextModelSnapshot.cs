@@ -32,6 +32,12 @@ namespace TrackMoney.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ExternalAppId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExternalAppType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

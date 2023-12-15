@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "ra8o36ilYBbYqPPSF1cEoTXZPQZyXrN14IJwXTNSfU2R9Pdl1biX51T/95aA8MZoj86V92A4YvBRJnfDHn8GAA==",
+  "dgSpecHash": "pEDuhfYKHWoWnlA5zZtR3jF82oUGg3DpMQxP4KTzQ4U+qMC88E3PHYpgsOtJL2AGW490EzmRDrlmQOTaHk6OoA==",
   "success": true,
   "projectFilePath": "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.Services\\TrackMoney.Services.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Oleks\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Oleks\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Oleks\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.0.3\\microsoft.identitymodel.abstractions.7.0.3.nupkg.sha512",
+    "C:\\Users\\Oleks\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.0.3\\microsoft.identitymodel.jsonwebtokens.7.0.3.nupkg.sha512",
+    "C:\\Users\\Oleks\\.nuget\\packages\\microsoft.identitymodel.logging\\7.0.3\\microsoft.identitymodel.logging.7.0.3.nupkg.sha512",
+    "C:\\Users\\Oleks\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.0.3\\microsoft.identitymodel.tokens.7.0.3.nupkg.sha512",
+    "C:\\Users\\Oleks\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.0.3\\system.identitymodel.tokens.jwt.7.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

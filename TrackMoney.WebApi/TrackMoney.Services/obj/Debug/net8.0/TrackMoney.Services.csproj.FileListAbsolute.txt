@@ -10,3 +10,7 @@ D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Services
 D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Services\obj\Debug\net8.0\refint\TrackMoney.Services.dll
 D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Services\obj\Debug\net8.0\TrackMoney.Services.pdb
 D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Services\obj\Debug\net8.0\ref\TrackMoney.Services.dll
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Services\bin\Debug\net8.0\TrackMoney.BLL.Models.dll
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Services\bin\Debug\net8.0\TrackMoney.BLL.Models.pdb
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Services\obj\Debug\net8.0\TrackMoney.Services.csproj.AssemblyReference.cache
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.Services\obj\Debug\net8.0\TrackMoney.Services.csproj.CopyComplete

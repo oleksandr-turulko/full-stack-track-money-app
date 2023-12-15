@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TrackMoney.Data.Context;
 
 namespace TrackMoney.Data.Repos.Abstract
 {
-    internal class BaseRepo
+    public abstract class BaseRepo
     {
+        protected readonly TrackMoneyDbContext _db;
+
+        public BaseRepo(TrackMoneyDbContext db)
+        {
+            _db = db;
+        }
     }
 }
