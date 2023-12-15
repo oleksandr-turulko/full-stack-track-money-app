@@ -21,12 +21,20 @@ namespace TrackMoney.Data.Repos.Repos.Users
         && string.Equals(u.ExternalAppType, externalType));
 
         public async Task<User> GetUserBySignInRequest(SignInRequest request)
-        => _db.Users
-                .FirstOrDefault(u =>
-                (string.Equals(u.Username, request.UserName)
-                || string.Equals(u.Email, request.Email))
-                && (_passwordHasher.VerifyHashedPassword(u.Password, request.Password) == PasswordVerificationResult.Success));
+        {
+            var user = _db.Users
+                   .FirstOrDefault(u =>
+                   string.Equals(u.Username, request.UserName)
+                   || string.Equals(u.Email, request.Email));
 
+            if (user != null && _passwordHasher.VerifyHashedPassword(user.Password, request.Password) == PasswordVerificationResult.Success)
+            {
+                return user;
+            }
+
+
+            return null;
+        }
 
         public async Task<User> SignUpUser(SignInRequest request)
         {

@@ -39,6 +39,10 @@ namespace TrackMoney.BLL.UserBl
                     break;
             }
 
+            if (user == null)
+                return new BadResponse { Message = "Incorrect username or pasword" };
+
+
             return new AuthResponse
             {
                 Jwt = JwtGenerator.GenerateJWT(user.Username, user.Id)
@@ -50,16 +54,10 @@ namespace TrackMoney.BLL.UserBl
             var userBySignInCredentials = await _userRepo.GetUserBySignInRequest(request);
             if (userBySignInCredentials == null)
             {
-                return new BadResponse
-                {
-                    Message = "Incorrect username or pasword"
-                };
+                return null;
             }
 
-            return new AuthResponse
-            {
-                Jwt = JwtGenerator.GenerateJWT(userBySignInCredentials.Username, userBySignInCredentials.Id)
-            };
+            return userBySignInCredentials;
         }
 
         private async Task<object> SignUp(SignInRequest request)
@@ -67,17 +65,11 @@ namespace TrackMoney.BLL.UserBl
             var userBySignUpCredentials = await _userRepo.GetUserBySignInRequest(request);
             if (userBySignUpCredentials != null)
             {
-                return new BadResponse
-                {
-                    Message = "User with same credentials already exists"
-                };
+                return null;
             }
             var newUser = await _userRepo.SignUpUser(request);
 
-            return new AuthResponse
-            {
-                Jwt = JwtGenerator.GenerateJWT(newUser.Username, newUser.Id)
-            };
+            return newUser;
         }
 
         private async Task<object> GoogleAuth(SignInRequest request)
@@ -88,7 +80,7 @@ namespace TrackMoney.BLL.UserBl
             {
                 return await SignUp(request);
             }
-            return await SignIn(request);
+            return userByGoogleCredentials;
         }
 
     }

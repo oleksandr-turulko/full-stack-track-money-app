@@ -2,13 +2,13 @@ import { userAuthenticated } from '../app/authenticationSlice';
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: `${process.env.REACT_APP_BASE_URL}/Authentication`,
+    baseURL: `${process.env.REACT_APP_BASE_URL}/Users`,
 });
 
 export const SignUp = async (dispatch, credentials) => {
     try {
         // api call
-        const { data } = await axios.post('/sign-up', credentials);
+        const { data } = await axiosInstance.post('/sign-up', credentials);
         dispatch(userAuthenticated(data));
     } catch {
         console.log('Error!');

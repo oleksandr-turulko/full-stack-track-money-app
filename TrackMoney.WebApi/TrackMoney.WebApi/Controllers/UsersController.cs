@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TrackMoney.BLL.Enums;
 using TrackMoney.BLL.Models.Messages;
+using TrackMoney.BLL.Models.Messages.Enums;
 using TrackMoney.BLL.Models.Messages.Requests.Users;
 using TrackMoney.BLL.UserBl;
 using static Google.Apis.Auth.GoogleJsonWebSignature;
@@ -22,6 +23,8 @@ namespace TrackMoney.WebApi.Controllers
         [Route("sign-up")]
         public async Task<ActionResult> SignUp(SignInRequest request)
         {
+            request.SignInType = SignInType.SignUp;
+
             var response = await _userBl.UserBlAction(request, UserBlActions.SignUp);
 
             if (response is BadResponse)
@@ -33,6 +36,13 @@ namespace TrackMoney.WebApi.Controllers
         [Route("sign-in")]
         public async Task<ActionResult> SignIn(SignInRequest request)
         {
+            request.SignInType = SignInType.SignIn;
+            if (request.UserName.Contains('@'))
+            {
+                request.Email = request.UserName;
+                request.UserName = null;
+            }
+
             var response = await _userBl.UserBlAction(request, UserBlActions.SignIn);
 
             if (response is BadResponse)
@@ -57,7 +67,8 @@ namespace TrackMoney.WebApi.Controllers
             {
                 Email = payload.Email,
                 ExternalId = payload.Subject,
-                ExternalType = "GOOGLE"
+                ExternalType = "GOOGLE",
+                SignInType = SignInType.GoogleAuth
             }, UserBlActions.GoogleAuth);
 
 
