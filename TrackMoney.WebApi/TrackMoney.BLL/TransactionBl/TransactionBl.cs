@@ -23,6 +23,7 @@ namespace TrackMoney.BLL.TransactionBl
             var transactions = await _transactionRepo.GetTransactionsByUserId(userId, pageNumber, pageSize);
             return transactions;
         }
+
         public async Task<object> UpdateUsersTransaction(string jwt, UpdateTransactionRequest request)
         {
             var userId = await JwtReader.GetIdFromJwt(jwt);
@@ -57,6 +58,23 @@ namespace TrackMoney.BLL.TransactionBl
                 return result;
             }
 
+
+            return new BadResponse
+            {
+                Message = "Invalid data"
+            };
+        }
+
+        public async Task<object?> DeleteUsersTransactionById(string jwt, string transactionId)
+        {
+            var userId = await JwtReader.GetIdFromJwt(jwt);
+            var transactionById = await _transactionRepo.GetUsersTransactionById(userId, transactionId);
+
+            if (transactionById != null)
+            {
+                await _transactionRepo.RemoveUsersTransaction(transactionById);
+                return null;
+            }
 
             return new BadResponse
             {

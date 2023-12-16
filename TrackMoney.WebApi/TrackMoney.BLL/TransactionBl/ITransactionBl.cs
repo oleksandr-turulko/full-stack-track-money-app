@@ -7,5 +7,6 @@ namespace TrackMoney.BLL.TransactionBl
         Task<object> UpdateUsersTransaction(string jwt, UpdateTransactionRequest request);
         Task<object> GetUsersTransactions(string jwt, int pageNumber, int pageSize);
         Task<object> AddUsersTransaction(string jwt, AddTransactionRequest request);
+        Task<object?> DeleteUsersTransactionById(string jwt, string transactionId);
     }
 }

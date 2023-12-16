@@ -8,16 +8,26 @@ export const authenticationSlice = createSlice({
     },
     reducers: {
         userAuthenticated: (state, action) => {
-            sessionStorage.setItem('token', action.payload.token);
+            const storedValue = localStorage.getItem('token');
+            let token ='';
+            if (storedValue !== null) {
+            // Use the value
+                token = storedValue;
+            } else {
+            // Handle the case where the item is not present
+                localStorage.setItem('token', action.payload.jwt);
+                token = localStorage.getItem('token');
+            }
+            
             return {
                 ...state, ...{
-                    token: action.payload.token,
+                    token: token,
                     isLoggedIn: true,
                 }
             }
         },
         logout: () => {
-            sessionStorage.clear();
+            localStorage.clear();
         }
     }
 });

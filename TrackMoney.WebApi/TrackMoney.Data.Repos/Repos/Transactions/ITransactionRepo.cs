@@ -9,5 +9,6 @@ namespace TrackMoney.Data.Repos.Repos.Transactions
         Task<object> AddUsersTransaction(string userId, AddTransactionRequest request);
         Task<object> GetTransactionsByUserId(string userId, int pageNumber, int pageSize);
         Task<object> UpdateUsersTransaction(Transaction transaction, UpdateTransactionRequest request);
+        Task RemoveUsersTransaction(Transaction transactionById);
     }
 }

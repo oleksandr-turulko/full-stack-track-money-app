@@ -9,6 +9,7 @@ namespace TrackMoney.Services.Mapper
         public MapperProfile()
         {
             CreateMap<Transaction, TransactionViewDto>()
+            .ForMember(dest => dest.CurrencyCode, opt => opt.MapFrom(src => src.Currency.Code))
             .ForMember(dest => dest.TransactionType, opt => opt.MapFrom(src => src.TransactionType.ToString())) // Assuming TransactionType is an enum
             .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt));
         }

@@ -23,7 +23,6 @@ namespace TrackMoney.Data.Repos.Repos.Transactions
         {
             var newTransaction = new Transaction
             {
-
                 Id = Guid.NewGuid(),
                 Description = request.Description,
                 Value = request.Value,
@@ -74,7 +73,7 @@ namespace TrackMoney.Data.Repos.Repos.Transactions
             transaction.Value = request.Value;
             transaction.UpdatedAt = DateTime.Now;
             _db.Transactions.Update(transaction);
-            await _db.AddRangeAsync();
+            await _db.SaveChangesAsync();
 
 
             return _mapper.Map<TransactionViewDto>(transaction);
@@ -84,5 +83,11 @@ namespace TrackMoney.Data.Repos.Repos.Transactions
         => await _db.Transactions
             .FirstOrDefaultAsync(t => string.Equals(userId, t.UserId.ToString()) &&
                                                         string.Equals(transactionId, t.Id.ToString()));
+
+        public async Task RemoveUsersTransaction(Transaction transactionById)
+        {
+            _db.Remove(transactionById);
+            await _db.SaveChangesAsync();
+        }
     }
 }

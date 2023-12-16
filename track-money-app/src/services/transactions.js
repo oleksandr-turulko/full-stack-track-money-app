@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
 })
 
 axiosInstance.interceptors.request.use((config) => {
-    config.headers = { authorization: 'Bearer ' + sessionStorage.getItem('token') };
+    config.headers = { authorization: 'Bearer ' + localStorage.getItem('token') };
     return config;
 });
 
@@ -36,7 +36,7 @@ export const NewTransaction = async (dispatch, transaction) => {
 export const EditTransaction = async (dispatch, transaction) => {
     try {
         // api call
-        await axiosInstance.put('', transaction);
+        await axiosInstance.patch('', transaction);
         dispatch(editTransaction(transaction));
     } catch {
         dispatch(editTransactionError());
@@ -46,7 +46,8 @@ export const EditTransaction = async (dispatch, transaction) => {
 export const DeleteTransaction = async (dispatch, transaction) => {
     try {
         // api call
-        await axiosInstance.delete('', { data: { ...transaction } });
+        await axiosInstance.delete(`/${transaction.id}`);
+
         dispatch(deleteTransaction(transaction));
     } catch {
         dispatch(deleteTransactionError());

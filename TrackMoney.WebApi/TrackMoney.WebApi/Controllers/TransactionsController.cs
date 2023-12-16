@@ -54,5 +54,19 @@ namespace TrackMoney.WebApi.Controllers
 
             return Ok(response);
         }
+
+        [HttpDelete("{transactionId}")]
+        public async Task<ActionResult> DeleteUsersTransactionById(string transactionId)
+        {
+            var jwt = HttpContext.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
+
+            var response = await _transactionsBl.DeleteUsersTransactionById(jwt, transactionId);
+            if (response is BadResponse)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
+        }
     }
 }
