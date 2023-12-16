@@ -367,6 +367,9 @@
             "projectReferences": {
               "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.BLL.Models\\TrackMoney.BLL.Models.csproj": {
                 "projectPath": "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.BLL.Models\\TrackMoney.BLL.Models.csproj"
+              },
+              "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.Data.Models\\TrackMoney.Data.Models.csproj": {
+                "projectPath": "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.Data.Models\\TrackMoney.Data.Models.csproj"
               }
             }
           }

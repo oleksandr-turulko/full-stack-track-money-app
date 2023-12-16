@@ -9,6 +9,7 @@ using TrackMoney.BLL.UserBl;
 using TrackMoney.Data.Context;
 using TrackMoney.Data.Repos.Repos.Transactions;
 using TrackMoney.Data.Repos.Repos.Users;
+using TrackMoney.Services.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,6 +44,7 @@ builder.Services.AddAuthentication(o =>
 });
 
 builder.Services.AddAuthorization();
+builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddScoped<IUserBl, UserBl>();
 builder.Services.AddScoped<IUserRepo, SqlUserRepo>();
 builder.Services.AddScoped<ITransactionBl, TransactionBl>();

@@ -1,11 +1,11 @@
-﻿
-using TrackMoney.BLL.Models.Messages.Requests.Transactions;
+﻿using TrackMoney.BLL.Models.Messages.Requests.Transactions;
 
 namespace TrackMoney.BLL.TransactionBl
 {
     public interface ITransactionBl
     {
-        Task<object> AddUsersTransaction(string jwt, AddTransactionRequest request);
+        Task<object> UpdateUsersTransaction(string jwt, UpdateTransactionRequest request);
         Task<object> GetUsersTransactions(string jwt, int pageNumber, int pageSize);
+        Task<object> AddUsersTransaction(string jwt, AddTransactionRequest request);
     }
 }

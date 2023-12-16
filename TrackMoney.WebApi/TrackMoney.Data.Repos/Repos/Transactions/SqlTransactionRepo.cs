@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using TrackMoney.BLL.Models.Messages.Requests.Transactions;
 using TrackMoney.Data.Context;
 using TrackMoney.Data.Models.Dtos.Transactions;
@@ -10,23 +11,12 @@ namespace TrackMoney.Data.Repos.Repos.Transactions
 {
     public class SqlTransactionRepo : BaseRepo, ITransactionRepo
     {
-        public SqlTransactionRepo(TrackMoneyDbContext db) : base(db)
-        {
-        }
+        private readonly IMapper _mapper;
 
-        public async Task<object> AddTransactionByUserId(string userId, int pageNumber, int pageSize)
-         => _db.Transactions
-                .Include(t => t.Currency)
-                .Where(t => t.UserId.ToString() == userId)
-                .Skip(pageNumber * pageSize)
-                .Take(pageSize)
-                .Select(t => new TransactionViewDto
-                {
-                    Id = t.Id,
-                    Description = t.Description,
-                    Amount = t.Value,
-                    CurrencyCode = t.Currency.Code
-                });
+        public SqlTransactionRepo(TrackMoneyDbContext db, IMapper mapper) : base(db)
+        {
+            _mapper = mapper;
+        }
 
 
         public async Task<object> AddUsersTransaction(string userId, AddTransactionRequest request)
@@ -47,8 +37,9 @@ namespace TrackMoney.Data.Repos.Repos.Transactions
 
             newTransaction.Currency = currency;
             _db.Add(newTransaction);
+            await _db.SaveChangesAsync();
 
-            return newTransaction;
+            return _mapper.Map<TransactionViewDto>(newTransaction);
         }
 
         private async Task<Currency> AddNewCurrency(string currencyCode, decimal value)
@@ -65,21 +56,33 @@ namespace TrackMoney.Data.Repos.Repos.Transactions
 
         public async Task<object> GetTransactionsByUserId(string userId, int pageNumber, int pageSize)
         {
+            var take = pageNumber * pageSize;
+            var skip = pageNumber == 1 ? 0 : pageNumber * pageSize;
             var usersTransactions = _db.Transactions
                 .Include(t => t.Currency)
                 .Where(t => t.UserId.ToString() == userId)
-                .Skip(pageNumber * pageSize)
-                .Take(pageSize)
-                .Select(t => new TransactionViewDto
-                {
-                    Id = t.Id,
-                    Description = t.Description,
-                    Amount = t.Value,
-                    CurrencyCode = t.Currency.Code
-                });
-
-
-            return usersTransactions;
+                .Skip(skip)
+                .Take(take)
+                .AsEnumerable();
+            return _mapper.Map<IEnumerable<TransactionViewDto>>(usersTransactions);
         }
+
+        public async Task<object> UpdateUsersTransaction(Transaction transaction, UpdateTransactionRequest request)
+        {
+            transaction.TransactionType = Enum.Parse<TransactionType>(request.TransactionType);
+            transaction.Description = request.Description;
+            transaction.Value = request.Value;
+            transaction.UpdatedAt = DateTime.Now;
+            _db.Transactions.Update(transaction);
+            await _db.AddRangeAsync();
+
+
+            return _mapper.Map<TransactionViewDto>(transaction);
+        }
+
+        public async Task<Transaction?> GetUsersTransactionById(string userId, string transactionId)
+        => await _db.Transactions
+            .FirstOrDefaultAsync(t => string.Equals(userId, t.UserId.ToString()) &&
+                                                        string.Equals(transactionId, t.Id.ToString()));
     }
 }

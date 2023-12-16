@@ -599,7 +599,8 @@
           "Microsoft.IdentityModel.Tokens": "7.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.0.3",
           "System.Net.Http.Json": "8.0.0",
-          "TrackMoney.BLL.Models": "1.0.0"
+          "TrackMoney.BLL.Models": "1.0.0",
+          "TrackMoney.Data.Models": "1.0.0"
         },
         "runtime": {
           "TrackMoney.Services.dll": {}

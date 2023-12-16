@@ -25,7 +25,7 @@ namespace TrackMoney.WebApi.Controllers
             var jwt = HttpContext.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
 
             var response = await _transactionsBl.GetUsersTransactions(jwt, pageNumber, pageSize);
-            return Ok();
+            return Ok(response);
         }
         [HttpPost]
         public async Task<ActionResult> AddUsersTransaction([FromBody] AddTransactionRequest request)
@@ -33,6 +33,20 @@ namespace TrackMoney.WebApi.Controllers
             var jwt = HttpContext.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
 
             var response = await _transactionsBl.AddUsersTransaction(jwt, request);
+            if (response is BadResponse)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
+        }
+
+        [HttpPatch]
+        public async Task<ActionResult> UpdateUsersTransaction([FromBody] UpdateTransactionRequest request)
+        {
+            var jwt = HttpContext.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
+
+            var response = await _transactionsBl.UpdateUsersTransaction(jwt, request);
             if (response is BadResponse)
             {
                 return BadRequest(response);

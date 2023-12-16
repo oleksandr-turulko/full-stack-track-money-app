@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TrackMoney.BLL.Models\TrackMoney.BLL.Models.csproj" />
+    <ProjectReference Include="..\TrackMoney.Data.Models\TrackMoney.Data.Models.csproj" />
   </ItemGroup>
 
 </Project>

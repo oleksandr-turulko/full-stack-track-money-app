@@ -367,6 +367,9 @@
             "projectReferences": {
               "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.BLL.Models\\TrackMoney.BLL.Models.csproj": {
                 "projectPath": "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.BLL.Models\\TrackMoney.BLL.Models.csproj"
+              },
+              "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.Data.Models\\TrackMoney.Data.Models.csproj": {
+                "projectPath": "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.Data.Models\\TrackMoney.Data.Models.csproj"
               }
             }
           }
@@ -464,6 +467,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Google.Apis.Auth": {
               "target": "Package",
               "version": "[1.64.0, )"
