@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrackMoney.Data.Repos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26be39a5a20afbd70933a3a0fc40f54a78b66b35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrackMoney.Data.Repos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrackMoney.Data.Repos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

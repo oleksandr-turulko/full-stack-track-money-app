@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using TrackMoney.BLL.StatisticsBl;
 using TrackMoney.BLL.TransactionBl;
 using TrackMoney.BLL.UserBl;
 using TrackMoney.Data.Context;
@@ -49,6 +50,8 @@ builder.Services.AddScoped<IUserBl, UserBl>();
 builder.Services.AddScoped<IUserRepo, SqlUserRepo>();
 builder.Services.AddScoped<ITransactionBl, TransactionBl>();
 builder.Services.AddScoped<ITransactionRepo, SqlTransactionRepo>();
+builder.Services.AddScoped<IStatisticsBl, StatisticsBl>();
+builder.Services.AddScoped<IStatisticsRepo, SqlStatisticsRepo>();
 
 builder.Services.AddSingleton<IPasswordHasher, PasswordHasher>();
 builder.Services.AddControllers();
