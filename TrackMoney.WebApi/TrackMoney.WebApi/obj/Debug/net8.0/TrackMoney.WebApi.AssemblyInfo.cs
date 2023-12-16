@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrackMoney.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad7fc97fefd0490348e87fa045782161d06c88ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26be39a5a20afbd70933a3a0fc40f54a78b66b35")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrackMoney.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrackMoney.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

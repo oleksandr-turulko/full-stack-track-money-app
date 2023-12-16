@@ -10,6 +10,7 @@ namespace TrackMoney.Services.Mapper
         {
             CreateMap<Transaction, TransactionViewDto>()
             .ForMember(dest => dest.CurrencyCode, opt => opt.MapFrom(src => src.Currency.Code))
+            .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Value))
             .ForMember(dest => dest.TransactionType, opt => opt.MapFrom(src => src.TransactionType.ToString())) // Assuming TransactionType is an enum
             .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt));
         }

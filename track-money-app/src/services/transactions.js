@@ -13,10 +13,10 @@ axiosInstance.interceptors.request.use((config) => {
     return config;
 });
 
-export const GetTransactions = async (dispatch) => {
+export const GetTransactions = async (dispatch, params) => {
     try {
         // api call
-        const { data } = await axiosInstance.get();
+        const { data } = await axiosInstance.get( `?pageNumber=${params.pageNumber}&pageSize=${params.pageSize}`);
         dispatch(setTransactions(data));
     } catch {
         dispatch(setTransactionsError());

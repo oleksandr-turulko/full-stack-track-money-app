@@ -13,7 +13,7 @@ const Navbar = () => {
             ?
             <div style={{display:'flex', alignItems:'center'}}>
                 <NavLink style={{ marginLeft: '1rem' }} variant='link' to='/'>Home</NavLink>
-                <NavLink style={{ marginLeft: '1rem' }} variant='link' to='/statistics'>Statistics</NavLink>
+                {/* <NavLink style={{ marginLeft: '1rem' }} variant='link' to='/statistics'>Statistics</NavLink> */}
                 <Button variant='link' href='/signin' onClick={() => { dispatch(logout()) }}>Log out</Button>
             </div>
             : <div style={{ display: 'flex' }}>
