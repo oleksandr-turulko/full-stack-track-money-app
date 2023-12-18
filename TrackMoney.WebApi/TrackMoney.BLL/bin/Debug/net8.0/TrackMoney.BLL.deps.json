@@ -61,6 +61,14 @@
           }
         }
       },
+      "Bogus/35.0.1": {
+        "runtime": {
+          "lib/net6.0/Bogus.dll": {
+            "assemblyVersion": "35.0.1.0",
+            "fileVersion": "35.0.1.0"
+          }
+        }
+      },
       "Microsoft.AspNet.Identity.Core/2.2.4": {
         "runtime": {
           "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
@@ -584,6 +592,7 @@
       },
       "TrackMoney.Data.Repos/1.0.0": {
         "dependencies": {
+          "Bogus": "35.0.1",
           "Microsoft.AspNet.Identity.Core": "2.2.4",
           "TrackMoney.BLL.Models": "1.0.0",
           "TrackMoney.Data": "1.0.0",
@@ -634,6 +643,13 @@
       "sha512": "sha512-eHEiCO/8+MfNc9nH5dVew/+FvxdaGrkRL4OMNwIz0W79+wtJyEoeRlXJ3SrXhoy9XR58geBYKmzMR83VO7bcAw==",
       "path": "azure.identity/1.7.0",
       "hashPath": "azure.identity.1.7.0.nupkg.sha512"
+    },
+    "Bogus/35.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LS9nczTM+frGJ9bdQV82WwEvt1tKaiIQq0kmeMhUyuzhWMRggo9WULTxhc++QjWQQ2bWp65lyt00nJt0meKD0g==",
+      "path": "bogus/35.0.1",
+      "hashPath": "bogus.35.0.1.nupkg.sha512"
     },
     "Microsoft.AspNet.Identity.Core/2.2.4": {
       "type": "package",

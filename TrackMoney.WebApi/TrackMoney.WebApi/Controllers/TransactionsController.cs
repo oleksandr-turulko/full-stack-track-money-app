@@ -18,15 +18,29 @@ namespace TrackMoney.WebApi.Controllers
             _transactionsBl = transactionsBl;
         }
 
-        [HttpGet]
-        public async Task<ActionResult> GetUsersTransactions(int pageSize = 10, int pageNumber = 1)
+        [HttpPost("setBallance")]
+        public async Task<ActionResult> SetBallance(decimal ballance)
         {
-
             var jwt = HttpContext.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
 
-            var response = await _transactionsBl.GetUsersTransactions(jwt, pageNumber, pageSize);
+            var response = await _transactionsBl.SetUsersBallance(jwt, ballance);
+
+            if (response is null)
+            {
+                return Ok();
+            }
+            return BadRequest(response);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetUsersTransactions(int pageSize = 10, int pageNumber = 1, string currency = "UAH")
+        {
+            var jwt = HttpContext.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
+
+            var response = await _transactionsBl.GetUsersTransactions(jwt, pageNumber, pageSize, currency);
             return Ok(response);
         }
+
         [HttpPost]
         public async Task<ActionResult> AddUsersTransaction([FromBody] AddTransactionRequest request)
         {

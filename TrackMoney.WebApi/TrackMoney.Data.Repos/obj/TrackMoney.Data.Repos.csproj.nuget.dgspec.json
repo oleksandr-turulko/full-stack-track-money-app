@@ -170,6 +170,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.0.1, )"
+            },
             "Microsoft.AspNet.Identity.Core": {
               "target": "Package",
               "version": "[2.2.4, )"

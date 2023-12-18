@@ -16,7 +16,7 @@ axiosInstance.interceptors.request.use((config) => {
 export const GetTransactions = async (dispatch, params) => {
     try {
         // api call
-        const { data } = await axiosInstance.get( `?pageNumber=${params.pageNumber}&pageSize=${params.pageSize}`);
+        const { data } = await axiosInstance.get( `?pageNumber=${params.pageNumber}&pageSize=${params.pageSize}&selectedCurrency=${params.selectedCurrency}`);
         dispatch(setTransactions(data));
     } catch {
         dispatch(setTransactionsError());

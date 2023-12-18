@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "sbKjWIZw5sfZSTGFr3ldO5C4KDYiowgAiGNSe9XCxY170c6NHJ/Bkpbvz05HfhI7HM9eoGgmnh4FU/bj/dhYFA==",
+  "dgSpecHash": "heVsprezkq4BcQZe0pUoRTzfHxP9Aa1XlA+yFtaj8rX1wvFtaCdQnuuDFYPqpf3HPcNQsvkdK3Snqsc4DVMd9A==",
   "success": true,
   "projectFilePath": "D:\\Git\\1PETPROJ\\full-stack-track-money-app\\TrackMoney.WebApi\\TrackMoney.BLL\\TrackMoney.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oleks\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Oleks\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Oleks\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Oleks\\.nuget\\packages\\bogus\\35.0.1\\bogus.35.0.1.nupkg.sha512",
     "C:\\Users\\Oleks\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
     "C:\\Users\\Oleks\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Oleks\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

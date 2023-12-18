@@ -10,7 +10,6 @@ const HomePage = () => (
         <hr style={{ border: '1px solid grey' }} />
         <h4>Your Expenses</h4>
         <TransactionList />
-    </div>
-);
+    </div>);
 
 export default HomePage;

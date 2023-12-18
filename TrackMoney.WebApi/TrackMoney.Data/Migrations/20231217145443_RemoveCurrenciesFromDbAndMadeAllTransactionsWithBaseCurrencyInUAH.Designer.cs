@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrackMoney.Data.Context;
 
@@ -11,9 +12,11 @@ using TrackMoney.Data.Context;
 namespace TrackMoney.Data.Migrations
 {
     [DbContext(typeof(TrackMoneyDbContext))]
-    partial class TrackMoneyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231217145443_RemoveCurrenciesFromDbAndMadeAllTransactionsWithBaseCurrencyInUAH")]
+    partial class RemoveCurrenciesFromDbAndMadeAllTransactionsWithBaseCurrencyInUAH
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

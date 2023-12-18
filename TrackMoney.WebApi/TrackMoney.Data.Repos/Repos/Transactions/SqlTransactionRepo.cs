@@ -21,49 +21,43 @@ namespace TrackMoney.Data.Repos.Repos.Transactions
 
         public async Task<object> AddUsersTransaction(string userId, AddTransactionRequest request)
         {
+            var user = await _db.Users.Include(u => u.Transactions).FirstOrDefaultAsync(u => string.Equals(u.Id.ToString(), userId));
+
+
             var newTransaction = new Transaction
             {
                 Id = Guid.NewGuid(),
                 Description = request.Description,
-                Value = request.Value,
+                Value = CurrencyConverter.ConvertCurrency(request.Value, request.CurrencyCode, "UAH").Result,
                 Date = DateTime.Now,
                 TransactionType = (TransactionType)Enum.Parse(typeof(TransactionType), request.TransactionType),
                 UserId = Guid.Parse(userId)
             };
 
-            var currency = await _db.Currencies.FirstOrDefaultAsync(c => string.Equals(c.Code, request.CurrencyCode));
-            currency ??= await AddNewCurrency(request.CurrencyCode, request.Value);
+            user.Ballance += newTransaction.TransactionType == TransactionType.Income
+                                                    ? newTransaction.Value
+                                                    : -newTransaction.Value;
+            user.Transactions.Add(newTransaction);
 
-            newTransaction.Currency = currency;
-            _db.Add(newTransaction);
+
+            _db.Update(user);
             await _db.SaveChangesAsync();
 
             return _mapper.Map<TransactionViewDto>(newTransaction);
         }
 
-        private async Task<Currency> AddNewCurrency(string currencyCode, decimal value)
-        {
-            var newCurrency = new Currency
-            {
-                Id = Guid.NewGuid(),
-                Code = currencyCode,
-                ValueInUAH = CurrencyConverter.ConvertCurrency(value, currencyCode, "UAH").Result
-            };
 
-            return newCurrency;
-        }
-
-        public async Task<object> GetTransactionsByUserId(string userId, int pageNumber, int pageSize)
+        public async Task<IEnumerable<TransactionViewDto>> GetTransactionsByUserId(string userId, int pageNumber, int pageSize)
         {
             var take = pageNumber * pageSize;
             var skip = pageNumber == 1 ? 0 : pageNumber * pageSize;
             var usersTransactions = _db.Transactions
-                .Include(t => t.Currency)
                 .Where(t => t.UserId.ToString() == userId)
                 .Skip(skip)
                 .Take(take)
-                .AsEnumerable();
-            return _mapper.Map<IEnumerable<TransactionViewDto>>(usersTransactions);
+                .ToList();
+
+            return _mapper.Map<IEnumerable<Transaction>, IEnumerable<TransactionViewDto>>(usersTransactions);
         }
 
         public async Task<object> UpdateUsersTransaction(Transaction transaction, UpdateTransactionRequest request)
@@ -87,6 +81,14 @@ namespace TrackMoney.Data.Repos.Repos.Transactions
         public async Task RemoveUsersTransaction(Transaction transactionById)
         {
             _db.Remove(transactionById);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task SetUsersBallance(string userId, decimal ballance)
+        {
+            var user = await _db.Users.FirstOrDefaultAsync(u => string.Equals(userId, u.Id.ToString()));
+            user.Ballance = ballance;
+            _db.Update(user);
             await _db.SaveChangesAsync();
         }
     }

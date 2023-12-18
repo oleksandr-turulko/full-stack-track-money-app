@@ -7,7 +7,7 @@ namespace TrackMoney.Services.CurrencyConverter
         private const string ApiBaseUrl = "https://open.er-api.com/v6/latest/";
         private static readonly HttpClient HttpClient = new HttpClient();
 
-        public static async Task<decimal> ConvertCurrency(decimal value, string fromCurrency, string toCurrency)
+        public static async Task<decimal> ConvertCurrency(decimal value, string fromCurrency, string toCurrency = "UAH")
         {
             if (string.IsNullOrWhiteSpace(fromCurrency) || string.IsNullOrWhiteSpace(toCurrency))
             {
@@ -15,13 +15,15 @@ namespace TrackMoney.Services.CurrencyConverter
             }
 
             // Fetch exchange rates from the API
-            var exchangeRates = await GetExchangeRates(fromCurrency);
+            var exchangeRates = await GetExchangeRates(toCurrency);
 
             // Convert the value to UAH first
-            decimal uahValue = value / exchangeRates.Rates.UAH;
+
+
+            decimal uahValue = exchangeRates.Rates == null ? 0 : value / exchangeRates.Rates.UAH;
 
             // Convert to the target currency
-            return uahValue * exchangeRates.Rates.UAH;
+            return uahValue;
         }
 
 

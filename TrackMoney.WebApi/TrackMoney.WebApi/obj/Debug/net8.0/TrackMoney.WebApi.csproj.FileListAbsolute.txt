@@ -158,3 +158,4 @@ D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.WebApi\b
 D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.WebApi\bin\Debug\net8.0\TrackMoney.BLL.Models.pdb
 D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.WebApi\bin\Debug\net8.0\TrackMoney.Services.pdb
 D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.WebApi\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Git\1PETPROJ\full-stack-track-money-app\TrackMoney.WebApi\TrackMoney.WebApi\bin\Debug\net8.0\Bogus.dll

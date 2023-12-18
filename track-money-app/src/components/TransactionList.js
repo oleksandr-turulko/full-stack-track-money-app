@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetTransactions } from '../services/transactions';
-import { Button, Row, Col, Pagination } from 'react-bootstrap'; // Import Pagination component
+import { Button, Row, Col, Pagination } from 'react-bootstrap';
 import TransactionForm from './TransactionForm';
 
 const TransactionList = () => {
@@ -9,30 +9,25 @@ const TransactionList = () => {
     const [pageSize, setPageSize] = useState(10);
 
     const dispatch = useDispatch();
-
     const transactions = useSelector((state) => state.transactionSlice.transactions);
+    const selectedCurrency = useSelector((state) => state.currency);
 
     useEffect(() => {
-        GetTransactions(dispatch, {pageNumber:pageNumber, pageSize:pageSize}); // Pass pageNumber and pageSize
-    }, [pageNumber, pageSize]); // Update useEffect dependencies
+        GetTransactions(dispatch, { pageNumber, pageSize, selectedCurrency });
+    }, [pageNumber, pageSize, selectedCurrency]); 
+
 
     return (
         <div>
             {transactions.map((e) => (
                 <div key={e.id} style={{ marginBottom: '1rem' }}>
-                    <ListRow transaction={e} />
+                    <ListRow transaction={e} selectedCurrency={selectedCurrency} />
                 </div>
             ))}
-            <ListControls
-                pageNumber={pageNumber}
-                pageSize={pageSize}
-                setPageNumber={setPageNumber}
-                setPageSize={setPageSize}
-            />
+            <ListControls pageNumber={pageNumber} pageSize={pageSize} setPageNumber={setPageNumber} setPageSize={setPageSize} />
         </div>
     );
 };
-
 const ListControls = ({ pageNumber, pageSize, setPageNumber, setPageSize }) => {
     return (
         <Pagination>
@@ -42,8 +37,7 @@ const ListControls = ({ pageNumber, pageSize, setPageNumber, setPageSize }) => {
         </Pagination>
     );
 };
-
-const ListRow = ({ transaction }) => {
+const ListRow = ({ transaction, selectedCurrency }) => {
     const [isEditing, setIsEditing] = useState(false);
 
     return isEditing ? (
@@ -52,8 +46,8 @@ const ListRow = ({ transaction }) => {
         <div>
             <Row>
                 <Col>{transaction.description}</Col>
-                <Col>{transaction.amount}</Col>
-                <Col>{transaction.currencyCode}</Col>
+                <Col>{`${transaction.amount} ${selectedCurrency}`}</Col>
+                <Col>{Math.round(transaction.amount * 10) / 10 }</Col>
                 <Col>{transaction.transactionType}</Col>
                 <Col>{new Date(transaction.date).toLocaleDateString()}</Col>
                 <Col>{transaction.updatedAt ? new Date(transaction.updatedAt).toLocaleDateString() : '-'}</Col>

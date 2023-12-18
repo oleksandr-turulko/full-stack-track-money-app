@@ -13,8 +13,6 @@ namespace TrackMoney.Data.Models.Entities
 
         public decimal Ballance { get; set; } = .0m;
 
-        public Guid MainCurrencyId { get; set; }
-
         public ICollection<Transaction> Transactions { get; set; }
 
     }
