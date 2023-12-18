@@ -1,5 +1,4 @@
-﻿using TrackMoney.Data.Models.Entities;
-using TrackMoney.Data.Repos.Repos.Statistics;
+﻿using TrackMoney.Data.Repos.Repos.Statistics;
 using TrackMoney.Services.Jwt;
 
 namespace TrackMoney.BLL.StatisticsBl
@@ -13,11 +12,12 @@ namespace TrackMoney.BLL.StatisticsBl
             _statisticsRepo = statisticsRepo;
         }
 
-        public async Task<IEnumerable<KeyValuePair<string, double>>> GetTransactionAmountPerCategoryAndType(string jwt, TransactionType transactionType)
+        public async Task<IEnumerable<KeyValuePair<string, decimal>>> GetTransactionAmountPerCategoryAndType(string jwt, string transactionType,
+                                                                                                                string currencyCode)
         {
             var userId = await JwtReader.GetIdFromJwt(jwt);
 
-            return await _statisticsRepo.GetTransactionAmountPerCategoryAndType(userId, transactionType);
+            return await _statisticsRepo.GetTransactionAmountPerCategoryAndType(userId, transactionType, currencyCode);
         }
 
 

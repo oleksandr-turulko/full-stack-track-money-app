@@ -18,9 +18,18 @@ namespace TrackMoney.Data.Repos.Repos.Statistics
         }
 
 
-        public Task<IEnumerable<KeyValuePair<string, double>>> GetTransactionAmountPerCategoryAndType(string userId, TransactionType transactionType)
+        public async Task<IEnumerable<KeyValuePair<string, decimal>>> GetTransactionAmountPerCategoryAndType(string userId, string transactionType, string currencyCode)
         {
-            throw new NotImplementedException();
+            var transactionTypeFromString = Enum.Parse<TransactionType>(transactionType);
+            var result = _db.Transactions
+                    .Where(t => t.UserId == Guid.Parse(userId) && t.TransactionType == transactionTypeFromString)
+                    .GroupBy(t => t.Description)
+                    .Select(group => new KeyValuePair<string, decimal>(
+                        group.Key,
+                        group.Sum(t => (decimal)t.Value)
+                    ))
+                    .ToList();
+            return (IEnumerable<KeyValuePair<string, decimal>>)result;
         }
 
         public async Task<IEnumerable<Transaction>> GetUserTransactionsByPeriod(Guid userId, int? year, int? month, int? day, string transactionType)

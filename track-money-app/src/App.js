@@ -3,6 +3,7 @@ import HomePage from './components/HomePage';
 import Navbar from './components/Navbar';
 import SignInPage from './components/SignInPage';
 import SignUpPage from './components/SignUpPage';
+import StatisticsPage from './components/StatisticsPage';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { userAuthenticated } from './app/authenticationSlice';
@@ -22,6 +23,7 @@ const App = () => {
     <Navbar />
     <Switch>
       <Route exact path="/" render={() => (isLoggedIn ? <HomePage /> : <SignInPage />)} />
+      <Route path="/statistics" render={()=>(isLoggedIn ? <StatisticsPage /> : <SignInPage />)} />
       <Route path="/signup" render={() => (isLoggedIn ? <Redirect to='/' /> : <SignUpPage />)} />
       <Route path="/signin" render={() => (isLoggedIn ? <Redirect to='/' /> : <SignInPage />)} />
       <Route component={() => <h2>Page not found!</h2>} />

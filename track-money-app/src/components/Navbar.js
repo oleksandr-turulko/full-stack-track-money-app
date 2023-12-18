@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../app/authenticationSlice';
 import { GetTransactions } from '../services/transactions';
-import { setCurrency } from '../app/currencySlice'; // Add this line
+import { setCurrency } from '../app/currencySlice';
 
 const Navbar = () => {
   const { isLoggedIn } = useSelector((state) => state.authenticationSlice);

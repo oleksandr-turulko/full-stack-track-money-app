@@ -33,5 +33,20 @@ namespace TrackMoney.WebApi.Controllers
 
             return Ok(dataByPeriod);
         }
+
+        [HttpGet("getTransactionAmountPerType")]
+        public async Task<ActionResult> GetTransactionAmountPerCategoryAndType(string transactionType = "Expense", string currencyCode = "UAH")
+        {
+            var jwt = HttpContext.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
+
+            var dataPerCategory = await _statisticsBl.GetTransactionAmountPerCategoryAndType(jwt, transactionType, currencyCode);
+
+            if (dataPerCategory is BadResponse)
+            {
+                return BadRequest(dataPerCategory);
+            }
+
+            return Ok(dataPerCategory);
+        }
     }
 }
